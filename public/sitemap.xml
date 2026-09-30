@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://sanad-parkinson.vercel.app/</loc>
+    <loc>https://ysty.online/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -10,31 +10,31 @@
 
   <!-- Legal & Authority Pages -->
   <url>
-    <loc>https://sanad-parkinson.vercel.app/about/</loc>
+    <loc>https://ysty.online/about/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/contact/</loc>
+    <loc>https://ysty.online/contact/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/privacy-policy/</loc>
+    <loc>https://ysty.online/privacy-policy/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/terms/</loc>
+    <loc>https://ysty.online/terms/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/disclaimer/</loc>
+    <loc>https://ysty.online/disclaimer/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -42,7 +42,7 @@
 
   <!-- Interactive Tests -->
   <url>
-    <loc>https://sanad-parkinson.vercel.app/tests/</loc>
+    <loc>https://ysty.online/tests/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -50,37 +50,37 @@
 
   <!-- Tools Hub & 5 Printable Tools -->
   <url>
-    <loc>https://sanad-parkinson.vercel.app/tools/</loc>
+    <loc>https://ysty.online/tools/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/tools/medication-schedule/</loc>
+    <loc>https://ysty.online/tools/medication-schedule/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/tools/fall-prevention-checklist/</loc>
+    <loc>https://ysty.online/tools/fall-prevention-checklist/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/tools/daily-mobility-exercises/</loc>
+    <loc>https://ysty.online/tools/daily-mobility-exercises/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/tools/speech-swallowing-exercises/</loc>
+    <loc>https://ysty.online/tools/speech-swallowing-exercises/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/tools/caregiver-weekly-log/</loc>
+    <loc>https://ysty.online/tools/caregiver-weekly-log/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -88,7 +88,7 @@
 
   <!-- Articles Hub -->
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/</loc>
+    <loc>https://ysty.online/articles/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -96,99 +96,100 @@
 
   <!-- 16 Specialized Articles -->
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/early-parkinson-symptoms/</loc>
+    <loc>https://ysty.online/articles/early-parkinson-symptoms/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/five-stages-hoehn-yahr/</loc>
+    <loc>https://ysty.online/articles/five-stages-hoehn-yahr/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/parkinson-vs-essential-tremor/</loc>
+    <loc>https://ysty.online/articles/parkinson-vs-essential-tremor/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/datscan-diagnosis-tests/</loc>
+    <loc>https://ysty.online/articles/datscan-diagnosis-tests/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/levodopa-medication-guide/</loc>
+    <loc>https://ysty.online/articles/levodopa-medication-guide/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/deep-brain-stimulation-dbs/</loc>
+    <loc>https://ysty.online/articles/deep-brain-stimulation-dbs/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/physical-therapy-exercises/</loc>
+    <loc>https://ysty.online/articles/physical-therapy-exercises/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/nutrition-diet-parkinson/</loc>
+    <loc>https://ysty.online/articles/nutrition-diet-parkinson/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/fall-prevention-home-safety/</loc>
+    <loc>https://ysty.online/articles/fall-prevention-home-safety/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/freezing-of-gait-cues/</loc>
+    <loc>https://ysty.online/articles/freezing-of-gait-cues/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/assistive-devices-daily-living/</loc>
+    <loc>https://ysty.online/articles/assistive-devices-daily-living/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/speech-swallowing-therapy/</loc>
+    <loc>https://ysty.online/articles/speech-swallowing-therapy/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/caregiver-burnout-support/</loc>
+    <loc>https://ysty.online/articles/caregiver-burnout-support/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/parkinson-sleep-rem-disorders/</loc>
+    <loc>https://ysty.online/articles/parkinson-sleep-rem-disorders/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/depression-anxiety-dopamine/</loc>
+    <loc>https://ysty.online/articles/depression-anxiety-dopamine/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://sanad-parkinson.vercel.app/articles/parkinson-faq-arabic-families/</loc>
+    <loc>https://ysty.online/articles/parkinson-faq-arabic-families/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 </urlset>
+
