@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'الشروط والأحكام';
+const description = 'الشروط والأحكام المنظمة لاستخدام منصة سَنَد لرعاية مرضى باركنسون وحقوق الملكية الفكرية.';
+const lastUpdated = 'سبتمبر 2026';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <section class="page-hero">
+    <div class="container--narrow">
+      <span class="badge">قانوني</span>
+      <h1 class="page-hero__title">الشروط والأحكام (Terms of Service)</h1>
+      <p class="page-hero__lead">
+        تحدد هذه الشروط القواعد والضوابط الخاصة باستخدام منصة "سَنَد". بتصفحك للموقع أو تحميلك للجداول المطبوعة، فإنك توافق على الالتزام الكامل بهذه الشروط.
+      </p>
+      <p class="last-updated">آخر تحديث: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <section class="policy-section">
+    <div class="container--narrow content-block">
+
+      <div class="section-block">
+        <h2>1. الملكية الفكرية وحقوق النشر</h2>
+        <p>
+          جميع المقالات، الجداول التوضيحية، الرسوم البيانية، والأكواد المنشورة على موقع <strong>سَنَد</strong> هي ملكية فكرية حصرية ومحمية بموجب قوانين حقوق النشر. يُسمح بتحميل وطباعة الجداول للاستخدام الشخصي والرعاية العائلية فقط، ويُحظر استغلالها تجارياً دون موافقة خطية مسبقة.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>2. طبيعة المحتوى وعدم تقديم وصفات طبية</h2>
+        <p>
+          جميع المحتويات المنشورة على منصة سَنَد مُعدة لأغراض تثقيفية وتوعوية عامة. لا تشكل هذه المعلومات استشارة طبية مباشرة أو تشخيصاً سريرياً، ولا تغني عن متابعة طبيب الأعصاب الخاص بالمريض.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>3. الاستخدام المقبول للمنصة</h2>
+        <p>
+          يلتزم المستخدم بعدم استخدام الموقع بأي طريقة قد تعطل خدماته أو تضر بخوادمه، وبعدم استخدام أدوات سحب البيانات الآلية (Scraping) لنقل المحتوى.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>4. إعلانات الأطراف الثالثة</h2>
+        <p>
+          قد يعرض الموقع إعلانات تابعة لشبكة Google AdSense أو أطراف ثالثة. لا تمثل هذه الإعلانات توصية مباشرة من المنصة بالمنتج أو الخدمة المعلنة.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>5. التعديلات على الشروط</h2>
+        <p>
+          تحتفظ إدارة المنصة بحق تعديل بنود هذه الشروط في أي وقت، وتسري التعديلات فور نشرها على هذه الصفحة مباشرة.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero__title {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .page-hero__lead {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto var(--space-sm);
+  }
+  .last-updated {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  .policy-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+  .content-block {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+  }
+  .section-block {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-primary-xlight);
+  }
+  .section-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .section-block h2 {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+  .section-block p {
+    line-height: 1.9;
+    color: #334155;
+    margin-bottom: var(--space-sm);
+  }
+</style>

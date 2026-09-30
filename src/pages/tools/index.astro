@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'الأدوات والمطبوعات الإرشادية المجانية | منصة سَنَد';
+const description = 'مجموعة متكاملة من الجداول الطبية وقوائم فحص الأمان المنزلي ومفكرات الدواء المصممة لطباعتها واستخدامها يومياً لرعاية مريض باركنسون.';
+
+const tools = [
+  {
+    slug: 'medication-schedule',
+    title: 'جدول مواعيد وجرعات أدوية باركنسون (On/Off Tracker)',
+    desc: 'جدول دقيق لتنظيم أوقات تناول دواء الليفودوبا بالساعة، ومراقبة فترات النشاط والتصلب لمساعدة الطبيب في ضبط الجرعات.',
+    category: 'تنظيم دوائي',
+    icon: '💊',
+    badge: 'الأكثر استخداماً'
+  },
+  {
+    slug: 'fall-prevention-checklist',
+    title: 'قائمة فحص أمان المنزل والوقاية من السقوط',
+    desc: 'قائمة عملية خطوة بخطوة لمراجعة الحمام، السلالم، الإضاءة، والممرات لحماية كبار السن من حوادث الانزلاق والكسور.',
+    category: 'أمان منزلي',
+    icon: '🛡️',
+    badge: 'وقاية حيوية'
+  },
+  {
+    slug: 'daily-mobility-exercises',
+    title: 'جدول تمارين التوازن والحركة اليومية للوقاية من التصلب',
+    desc: 'برنامج حركي منزلي مدروس يضم تمارين الخطوات العريضة، تدوير الجذع، وتمارين النهوض لتقوية العضلات ومنع التيبس.',
+    category: 'علاج طبيعي',
+    icon: '🏃‍♂️',
+    badge: 'تأهيل يومي'
+  },
+  {
+    slug: 'speech-swallowing-exercises',
+    title: 'دليل تمارين تقوية الصوت، النطق، والبلع الآمن',
+    desc: 'تمارين صوتية مستندة لبروتوكول LSVT للحفاظ على صوت قوي ومسموع، وإرشادات وضعية الرأس لتجنب الشرقة أثناء الأكل.',
+    category: 'تخاطب وبلع',
+    icon: '🗣️',
+    badge: 'تخاطب وتغذية'
+  },
+  {
+    slug: 'caregiver-weekly-log',
+    title: 'مفكرة المتابعة الأسبوعية للأعراض للزيارة الطبية',
+    desc: 'سجل أسبوعي ملخص ترصد فيه تعثرات المشي، كفاءة النوم، وتقلبات المزاج لتقديمه لطبيب الأعصاب في موعد المتابعة.',
+    category: 'متابعة سريرية',
+    icon: '📋',
+    badge: 'للطبيب المعالج'
+  }
+];
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- Hero -->
+  <section class="tools-hero">
+    <div class="container--narrow">
+      <span class="badge badge--accent">مطبوعات وأدوات مجانية</span>
+      <h1 class="tools-hero__title">الأدوات والمطبوعات الإرشادية لمرضى باركنسون</h1>
+      <p class="tools-hero__lead">
+        أدوات عملية وجداول طبية مصممة خصيصاً لمساعدة الأسر والمرافقين على ضبط مواعيد العلاج المعقدة، تأمين بيئة المنزل، وممارسة تمارين التوازن. جميع الأدوات متاحة للتحميل والطباعة PDF مجاناً بنقرة زر واحدة.
+      </p>
+    </div>
+  </section>
+
+  <!-- Ad Slot Top -->
+  <div class="container">
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="2000000001"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+
+  <!-- Tools Grid -->
+  <section class="tools-section">
+    <div class="container">
+      <div class="tools-grid">
+        {tools.map((tool) => (
+          <div class="tool-card">
+            <div class="tool-card__header">
+              <span class="tool-icon">{tool.icon}</span>
+              <span class="badge">{tool.badge}</span>
+            </div>
+            <h2 class="tool-card__title">
+              <a href={`/tools/${tool.slug}/`}>{tool.title}</a>
+            </h2>
+            <p class="tool-card__desc">{tool.desc}</p>
+            <div class="tool-card__footer">
+              <span class="tool-category">{tool.category}</span>
+              <a href={`/tools/${tool.slug}/`} class="btn btn--primary btn--sm">
+                معاينة وطباعة PDF 🖨️
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why tools matter -->
+  <section class="benefits-section">
+    <div class="container--narrow">
+      <h2>كيف تدعم هذه الجداول مسار علاج باركنسون؟</h2>
+      <p>
+        أثبتت الدراسات السريرية أن الالتزام الدقيق بجرعات الدواء بنسبة تتجاوز 90% يقلل من فترات التصلب (Off-time) بنسبة 35%، ويحمي المريض من تقلبات الحركة الحادة. كما أن تعديل بيئة المنزل وفق قوائم الفحص يقلل خطر كسور الحوض الناتجة عن السقوط بنسبة تفوق 50%.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .tools-hero {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tools-hero__title {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .tools-hero__lead {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.85;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .tools-section {
+    padding: var(--space-xl) 0;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+  .tool-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .tool-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+  }
+  .tool-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  .tool-card__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+    line-height: 1.4;
+  }
+  .tool-card__title a {
+    color: var(--color-text);
+  }
+  .tool-card__title a:hover {
+    color: var(--color-primary);
+  }
+  .tool-card__desc {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    flex: 1;
+    margin-bottom: var(--space-md);
+  }
+  .tool-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+  }
+  .tool-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .btn--sm {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.88rem;
+  }
+  .benefits-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    background: var(--color-primary-xlight);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-2xl);
+    text-align: center;
+  }
+  .benefits-section h2 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+  .benefits-section p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    font-size: 1rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+</style>

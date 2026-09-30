@@ -1,0 +1,438 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'المكتبة العلمية الشاملة لمرض باركنسون | منصة سَنَد';
+const description = 'مجموعة متكاملة من 16 دليلاً ومقالاً طبياً متخصصاً حول مرض باركنسون: التشخيص المبكر، الأدوية، التمارين الحركية، الأمان المنزلي، ودعم الأسرة.';
+
+const articles = [
+  // --- قسم التشخيص (4 مقالات) ---
+  {
+    slug: 'early-parkinson-symptoms',
+    title: 'العلامات المبكرة الخفية لمرض باركنسون قبل ظهور الرعاش',
+    excerpt: 'اكتشف الأعراض الأولى غير الحركية: تراجع حاسة الشم، صغر خط اليد، وتصلب الكتف وكيفية ملاحظتها قبل التشخيص الرسمي.',
+    category: 'تشخيص',
+    categoryColor: '#2563eb',
+    readTime: '11 دقيقة',
+    icon: '🔍',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'five-stages-hoehn-yahr',
+    title: 'المراحل الخمس لمرض باركنسون وفق مقياس Hoehn and Yahr',
+    excerpt: 'شرح مفصل لمراحل تطور المرض من الأعراض الأحادية الخفيفة إلى متطلبات الرعاية المتقدمة وكيف تستعد كل مرحلة.',
+    category: 'تشخيص',
+    categoryColor: '#2563eb',
+    readTime: '12 دقيقة',
+    icon: '📊',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'parkinson-vs-essential-tremor',
+    title: 'الفرق بين الرعاش مجهول السبب (Essential Tremor) ومرض باركنسون',
+    excerpt: 'مقارنة طبية دقيقة: هل يحدث الاهتزاز أثناء الحركة أم أثناء الراحة؟ الفروق الجوهرية لتبديد القلق والتشخيص الصحيح.',
+    category: 'تشخيص',
+    categoryColor: '#2563eb',
+    readTime: '10 دقائق',
+    icon: '🤝',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'datscan-diagnosis-tests',
+    title: 'كيف يتم تشخيص باركنسون؟ أشعة DaTscan، الفحص الإكلينيكي وما يطلبه الطبيب',
+    excerpt: 'دليلك لفهم فحوصات تصوير ناقلات الدوبامين، الفحص العصبي السريري، وكيف يستبعد الطبيب المتخصص الحالات المشابهة.',
+    category: 'تشخيص',
+    categoryColor: '#2563eb',
+    readTime: '12 دقيقة',
+    icon: '🔬',
+    date: 'سبتمبر 2026'
+  },
+
+  // --- قسم العلاج والأدوية (4 مقالات) ---
+  {
+    slug: 'levodopa-medication-guide',
+    title: 'دليل أدوية ليفودوبا (Levodopa): كيف تحصل على أقصى فاعلية؟',
+    excerpt: 'شرح كامل لآلية عمل سينيميت وستاليفو، كيفية تجنب تداخل بروتين الطعام، والتعامل مع ظاهرة انتهاء مفعول الجرعة (On/Off).',
+    category: 'علاج وأدوية',
+    categoryColor: '#16a34a',
+    readTime: '13 دقيقة',
+    icon: '💊',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'deep-brain-stimulation-dbs',
+    title: 'جراحة التحفيز العميق للدماغ (DBS): متى تكون الخيار الأنسب؟',
+    excerpt: 'كل ما تريد معرفته عن زراعة منظم الدماغ لباركنسون: شروط اختيار المريض، نسب النجاح المتوقعة، ومخاطر الجراحة.',
+    category: 'علاج وأدوية',
+    categoryColor: '#16a34a',
+    readTime: '12 دقيقة',
+    icon: '⚡',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'physical-therapy-exercises',
+    title: 'تمارين التوازن والعلاج الطبيعي اليومي لمقاومة التصلب والتيبس',
+    excerpt: 'برنامج حركي مدروس خطوة بخطوة بالصور لتقوية الجذع، كسر تجمد الخطوات، والمحافظة على الاستقامة والمشي بثبات.',
+    category: 'علاج وأدوية',
+    categoryColor: '#16a34a',
+    readTime: '12 دقيقة',
+    icon: '🏃‍♂️',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'nutrition-diet-parkinson',
+    title: 'التغذية الصحية لمرض باركنسون: بروتين الغذاء، الإمساك، وصحة الأمعاء',
+    excerpt: 'أفضل جدول غذائي ينظم امتصاص أدوية الدوبامين ويكافح الإمساك المزمن ويدعم صحة خلايا المخ بمضادات الأكسدة.',
+    category: 'علاج وأدوية',
+    categoryColor: '#16a34a',
+    readTime: '11 دقيقة',
+    icon: '🥗',
+    date: 'سبتمبر 2026'
+  },
+
+  // --- قسم الأمان والأدوات (4 مقالات) ---
+  {
+    slug: 'fall-prevention-home-safety',
+    title: 'دليل تأمين المنزل والوقاية من السقوط والكسور لكبار السن',
+    excerpt: 'خطوات عملية لتحويل الحمام والممرات وغرفة النوم إلى بيئة آمنة تمنع الانزلاق والكسور لكبار السن.',
+    category: 'أمان وأدوات',
+    categoryColor: '#d97706',
+    readTime: '10 دقائق',
+    icon: '🛡️',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'freezing-of-gait-cues',
+    title: 'تجمد المشي (Freezing of Gait): حيل بصرية وسمعية لكسر التصاق القدمين',
+    excerpt: 'استراتيجيات التوجيه الحسي البصري (Visual Cues) ونغمات الإيقاع لمساعدة المريض على إعادة تحريك قدميه بأمان وسرعة.',
+    category: 'أمان وأدوات',
+    categoryColor: '#d97706',
+    readTime: '10 دقائق',
+    icon: '🚶‍♂️',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'assistive-devices-daily-living',
+    title: 'أفضل الأجهزة والأدوات المساعدة اليومية لمرضى الرعاش',
+    excerpt: 'استعراض للملاعق المقاومة للاهتزاز الذكية، أحذية الإغلاق السهل، ومقابض الأمان التي تحفظ استقلالية المريض.',
+    category: 'أمان وأدوات',
+    categoryColor: '#d97706',
+    readTime: '9 دقائق',
+    icon: '🥄',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'speech-swallowing-therapy',
+    title: 'صعوبات البلع والكلام في باركنسون: تقنية LSVT وتمارين الحلق الآمنة',
+    excerpt: 'إرشادات وضعية الرأس وحيل الأكل الآمن لتفادي الشرقة، وتمارين لتقوية الصوت الجهوري والتواصل مع الأسرة.',
+    category: 'أمان وأدوات',
+    categoryColor: '#d97706',
+    readTime: '11 دقيقة',
+    icon: '🗣️',
+    date: 'سبتمبر 2026'
+  },
+
+  // --- قسم دعم الأسرة والمرافق (4 مقالات) ---
+  {
+    slug: 'caregiver-burnout-support',
+    title: 'دليل مرافق مريض باركنسون: استراتيجيات الوقاية من الإنهاك والاحتراق',
+    excerpt: 'إرشادات نفسية وعملية للأبناء والأزواج لمواجهة الضغوط اليومية، وتنظيم الرعاية المشتركة دون إهمال الصحة الشخصية.',
+    category: 'دعم الأسرة',
+    categoryColor: '#9333ea',
+    readTime: '10 دقائق',
+    icon: '❤️',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'parkinson-sleep-rem-disorders',
+    title: 'باركنسون واضطرابات النوم وحركة العين السريعة (RBD): الأسباب والحلول',
+    excerpt: 'لماذا يمثل المريض أحلامه بحركات عنيفة أثناء النوم؟ وكيف تؤمن غرفة النوم وتحسن عمق النوم الليلي للمريض والشريك.',
+    category: 'دعم الأسرة',
+    categoryColor: '#9333ea',
+    readTime: '10 دقائق',
+    icon: '🌙',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'depression-anxiety-dopamine',
+    title: 'الصحة النفسية لمرضى باركنسون: علاج الاكتئاب والقلق المرتبط بالدوبامين',
+    excerpt: 'تغيرات المزاج ليست "ضعف إرادة" بل نتيجة عضوية مباشرة لنقص الدوبامين في مراكز المكافأة. كيف نساعد مريضنا بحب وعلم.',
+    category: 'دعم الأسرة',
+    categoryColor: '#9333ea',
+    readTime: '11 دقيقة',
+    icon: '🧠',
+    date: 'سبتمبر 2026'
+  },
+  {
+    slug: 'parkinson-faq-arabic-families',
+    title: '25 سؤالاً شائعاً تطرحها الأسر العربية حول الشلل الرعاش والتعايش معه',
+    excerpt: 'إجابات علمية شاملة عن أسباب المرض، الوراثة، متوسط العمر، مستقبل العلاجات الجينية، ونصائح واقعية لحياة مستقرة.',
+    category: 'دعم الأسرة',
+    categoryColor: '#9333ea',
+    readTime: '14 دقيقة',
+    icon: '❓',
+    date: 'سبتمبر 2026'
+  }
+];
+
+const categories = ['الكل', 'تشخيص', 'علاج وأدوية', 'أمان وأدوات', 'دعم الأسرة'];
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge badge--accent">المكتبة الطبية المتخصصة</span>
+      <h1 class="page-hero__title">المكتبة العلمية الشاملة لمرض باركنسون</h1>
+      <p class="page-hero__lead">
+        مجموعة تضم {articles.length} دليلاً علمياً مبسطاً تغطي كل ما يحتاجه المريض وأسرته — من علامات التشخيص الأولى حتى تفاصيل الأدوية والتمارين الحركية والدعم النفسي.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="filters-section">
+    <div class="container">
+      <div class="filters-bar">
+        <span class="filters-label">تصفية حسب المحور:</span>
+        <div class="filters-buttons">
+          {categories.map((cat, i) => (
+            <button
+              class={`filter-btn ${i === 0 ? 'filter-btn--active' : ''}`}
+              data-category={cat}
+              type="button"
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Slot Top -->
+  <div class="container">
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="3000000002"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+
+  <!-- Articles Grid -->
+  <section class="articles-section">
+    <div class="container">
+      <div class="articles-meta">
+        <p>عرض <strong id="articlesCount">{articles.length}</strong> دليلاً طبياً معتمداً</p>
+      </div>
+
+      <div class="articles-grid" id="articlesGrid">
+        {articles.map((art) => (
+          <article class="article-card" data-category={art.category}>
+            <div class="article-card__icon">{art.icon}</div>
+            <div class="article-card__body">
+              <div class="article-card__meta">
+                <span
+                  class="article-card__category"
+                  style={`background: ${art.categoryColor}15; color: ${art.categoryColor};`}
+                >
+                  {art.category}
+                </span>
+                <span class="article-card__time">⏱️ {art.readTime}</span>
+              </div>
+              <h2 class="article-card__title">
+                <a href={`/articles/${art.slug}/`}>{art.title}</a>
+              </h2>
+              <p class="article-card__excerpt">{art.excerpt}</p>
+              <div class="article-card__footer">
+                <span class="article-card__date">📅 {art.date}</span>
+                <a href={`/articles/${art.slug}/`} class="article-card__link">
+                  اقرأ الدليل ←
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero__title {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .page-hero__lead {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .filters-section {
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-sm) 0;
+  }
+  .filters-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+  .filters-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+  .filters-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 0.4rem 1.1rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--color-border);
+    background: #ffffff;
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  .filter-btn--active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #ffffff !important;
+  }
+  .articles-section {
+    padding: var(--space-lg) 0 var(--space-2xl);
+  }
+  .articles-meta {
+    margin-bottom: var(--space-md);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+  .article-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .article-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-xs);
+  }
+  .article-card__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .article-card__category {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 100px;
+  }
+  .article-card__time {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+  .article-card__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+    line-height: 1.45;
+  }
+  .article-card__title a {
+    color: var(--color-text);
+  }
+  .article-card__title a:hover {
+    color: var(--color-primary);
+  }
+  .article-card__excerpt {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    flex: 1;
+    margin-bottom: var(--space-md);
+  }
+  .article-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-xs);
+    border-top: 1px solid var(--color-border);
+  }
+  .article-card__date {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+  .article-card__link {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.article-card');
+  const countEl = document.getElementById('articlesCount');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => b.classList.remove('filter-btn--active'));
+      btn.classList.add('filter-btn--active');
+
+      const selectedCategory = btn.getAttribute('data-category');
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const cardCategory = card.getAttribute('data-category');
+        if (selectedCategory === 'الكل' || cardCategory === selectedCategory) {
+          (card as HTMLElement).style.display = 'flex';
+          visibleCount++;
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+
+      if (countEl) countEl.textContent = String(visibleCount);
+    });
+  });
+</script>

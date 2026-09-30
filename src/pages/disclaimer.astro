@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'إخلاء المسؤولية الطبية';
+const description = 'إخلاء المسؤولية القانونية والطبية لمنصة سَنَد — المحتوى للأغراض التثقيفية والإرشادية فقط.';
+const lastUpdated = 'سبتمبر 2026';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <section class="page-hero">
+    <div class="container--narrow">
+      <span class="badge">قانوني وطبي</span>
+      <h1 class="page-hero__title">إخلاء المسؤولية الطبية (Medical Disclaimer)</h1>
+      <p class="page-hero__lead">
+        تنبيه قانوني وطبي صريح يوضح طبيعة وحدود المعلومات الإرشادية المنشورة على منصة "سَنَد".
+      </p>
+      <p class="last-updated">آخر تحديث: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <section class="policy-section">
+    <div class="container--narrow content-block">
+
+      <div class="warning-box">
+        <h3>⚠️ إشعار طبي عاجل</h3>
+        <p>
+          المحتوى المنشور على منصة <strong>سَنَد</strong> — بما في ذلك المقالات، نصائح الأدوية، تمارين العلاج الطبيعي، والاختبارات التفاعلية — هو محتوى إرشادي تثقيفي عام فقط. إنه لا يُشكل تشخيصاً طبياً، ولا يُعد بديلاً على الإطلاق عن الفحص السريري واستشارة طبيب الأعصاب المختص والمتابع لحالة المريض.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>1. التعديلات الدوائية والجرعات</h2>
+        <p>
+          تتطلب أدوية مرض باركنسون (مثل مركبات الليفودوبا والكاربيدوبا، ومحفزات الدوبامين) ضبطاً دقيقاً للغاية وبشكل فردي لكل مريض بحسب وزنه، عمره، والمرحلة التطورية للمرض. <strong>يحظر تماماً</strong> تغيير جرعة أي دواء، أو التوقف المفاجئ عن تناوله، أو إضافة أي علاج مكمل بناءً على قراءتك لمقالات المنصة دون الرجوع المباشر لطبيبك المعالج، حيث قد يؤدي التوقف المفاجئ إلى مضاعفات عصبية خطيرة (مثل متلازمة الانسحاب الخبيثة).
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>2. تمارين العلاج الطبيعي والحركي</h2>
+        <p>
+          تمارين التوازن والحركة المعروضة في المنصة تهدف إلى التثقيف العام. يجب التأكد من قدرة المريض البدنية على أدائها بوجود مرافق لحمايته من السقوط، ويُفضل استشارة أخصائي علاج طبيعي معتمد لتقييم مدى ملاءمة كل تمرين لحالة المريض الفردية.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>3. حالات الطوارئ الطبية</h2>
+        <p>
+          في حال حدوث أي تدهور صحي مفاجئ، مثل: السقوط الحاد مع اشتباه بكسر، صعوبة شديدة ومفاجئة في البلع، هلوسة بصرية حادة أو ارتباك ذهني غير معتاد، يرجى التوجه فوراً لأقرب مستشفى أو الاتصال بالإسعاف المحلي على الفور.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero__title {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .page-hero__lead {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto var(--space-sm);
+  }
+  .last-updated {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  .policy-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+  .content-block {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+  }
+  .warning-box {
+    background: #fffbeb;
+    border: 2px solid #f59e0b;
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+  .warning-box h3 {
+    color: #b45309;
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+  }
+  .warning-box p {
+    color: #78350f;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .section-block {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-primary-xlight);
+  }
+  .section-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .section-block h2 {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+  .section-block p {
+    line-height: 1.9;
+    color: #334155;
+    margin-bottom: var(--space-sm);
+  }
+</style>

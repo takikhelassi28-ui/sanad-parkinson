@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'تواصل معنا | منصة سَنَد لرعاية باركنسون';
+const description = 'تواصل مع فريق منصة سَنَد للاستفسارات العامة، اقتراح أدوات، أو مشاركة تجارب التعايش مع مرض باركنسون.';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <section class="contact-hero">
+    <div class="container--narrow">
+      <span class="badge">خدمة المجتمع والدعم</span>
+      <h1 class="contact-hero__title">تواصل معنا</h1>
+      <p class="contact-hero__lead">
+        يسعدنا تلقي رسائلكم واستفساراتكم، ومقترحاتكم لتطوير الأدوات والمقالات التي تدعم مرضى باركنسون وأسرهم في كافة أنحاء العالم العربي.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <div class="contact-form-wrap">
+          <h2>أرسل لنا رسالة</h2>
+          <p class="form-desc">املأ النموذج التالي وسيقوم أحد مسؤولي المنصة بالرد عليك في أقرب وقت:</p>
+
+          <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('شكراً لتواصلك! تم استلام رسالتك بنجاح وسنرد عليك قريباً.'); this.reset();">
+            <div class="form-group">
+              <label for="name">الاسم الكامل *</label>
+              <input type="text" id="name" name="name" required placeholder="مثال: عبد الله أحمد" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">البريد الإلكتروني *</label>
+              <input type="email" id="email" name="email" required placeholder="yourname@example.com" dir="ltr" />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">موضوع الرسالة *</label>
+              <select id="subject" name="subject" required>
+                <option value="">-- اختر موضوع الرسالة --</option>
+                <option value="tools">اقتراح أدوات أو جداول جديدة</option>
+                <option value="content">سؤال حول مقال أو محتوى منشور</option>
+                <option value="partnership">طلب تعاون أو شراكة مجتمعية</option>
+                <option value="other">أمر آخر</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">نص الرسالة *</label>
+              <textarea id="message" name="message" rows="5" required placeholder="اكتب استفسارك أو اقتراحك هنا بكل وضوح..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--submit">
+              إرسال الرسالة ✉️
+            </button>
+          </form>
+        </div>
+
+        <!-- Info Sidebar -->
+        <aside class="contact-info">
+          <div class="info-card info-card--accent">
+            <h3>📧 البريد الإلكتروني المباشر</h3>
+            <p>للمراسلات العامة والمقترحات التحريرية:</p>
+            <a href="mailto:contact@sanadparkinson.com" dir="ltr" class="email-link">
+              contact@sanadparkinson.com
+            </a>
+          </div>
+
+          <div class="info-card">
+            <h3>⏱️ أوقات المتابعة والرد</h3>
+            <p>يقوم فريق العمل بمراجعة الرسائل الواردة بشكل دوري:</p>
+            <ul>
+              <li>الاستفسارات العامة: خلال 48 ساعة</li>
+              <li>اقتراحات التمارين والأدوات: خلال 3 أيام عمل</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>⚠️ تنبيه طبي هام</h3>
+            <p>
+              منصة سَنَد منصة توعوية وإرشادية، ولا تقدم تشخيصاً طبياً طارئاً أو وصفات دوائية فردية عبر البريد الإلكتروني. في حالات الطوارئ الطبية الحرجة، يرجى التوجه فوراً لأقرب قسم طوارئ في منطقتك.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .contact-hero__title {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .contact-hero__lead {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .contact-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-xl);
+  }
+  .contact-form-wrap {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+  }
+  .contact-form-wrap h2 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.35rem;
+  }
+  .form-desc {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+  }
+  .form-group {
+    margin-bottom: var(--space-md);
+  }
+  label {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 0.4rem;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+  }
+  .btn--submit {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.05rem;
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .info-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  .info-card--accent {
+    border-color: #cbd5e1;
+    background: var(--color-primary-xlight);
+  }
+  .info-card h3 {
+    color: var(--color-primary);
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+  .info-card p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+  .info-card ul {
+    padding-right: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+  .info-card li {
+    margin-bottom: 0.35rem;
+  }
+  .email-link {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.05rem;
+  }
+  @media (max-width: 820px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

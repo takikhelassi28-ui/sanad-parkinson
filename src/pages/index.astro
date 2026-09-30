@@ -1,0 +1,444 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'الرئيسية | منصة سَنَد لرعاية مرضى باركنسون والتعايش معه';
+const description = 'المرجع العربي المتخصص لدعم مرضى باركنسون (الشلل الرعاش) وأسرهم — أحدث التطورات الطبية، برامج التمارين الحركية، أدوات الأمان المنزلي، واستشارات المرافقين.';
+
+const featuredArticles = [
+  {
+    slug: 'early-parkinson-symptoms',
+    badge: 'تشخيص مبكر',
+    title: 'العلامات المبكرة الخفية لمرض باركنسون قبل ظهور الرعاش',
+    desc: 'اكتشف الأعراض الأولى غير الحركية لباركنسون: تراجع حاسة الشم، صغر خط اليد، وتصلب الكتف وكيفية الملاحظة المبكرة.',
+    readTime: '11 دقيقة'
+  },
+  {
+    slug: 'levodopa-medication-guide',
+    badge: 'دليل الأدوية',
+    title: 'دليل أدوية ليفودوبا (Levodopa): كيف تحصل على أقصى فاعلية؟',
+    desc: 'شرح مفصل لآلية عمل الدواء، كيفية تجنب تداخل البروتين، والتعامل مع ظاهرة انتهاء مفعول الجرعة (On/Off).',
+    readTime: '13 دقيقة'
+  },
+  {
+    slug: 'fall-prevention-home-safety',
+    badge: 'أمان منزلي',
+    title: 'دليل تأمين المنزل والوقاية من السقوط لمريض باركنسون',
+    desc: 'خطوات عملية لتحويل الحمام والممرات وغرفة النوم إلى بيئة آمنة تمنع الانزلاق والكسور لكبار السن.',
+    readTime: '10 دقائق'
+  },
+  {
+    slug: 'physical-therapy-exercises',
+    badge: 'علاج طبيعي',
+    title: 'تمارين التوازن اليومية ومقاومة تصلب العضلات في المنزل',
+    desc: 'برنامج حركي مدروس خطوة بخطوة بالصور لتقوية الجذع، كسر تجمد الخطوات، والمحافظة على الاستقامة والمشي بثبات.',
+    readTime: '12 دقيقة'
+  },
+  {
+    slug: 'caregiver-burnout-support',
+    badge: 'دعم المرافق',
+    title: 'دليل مرافق مريض باركنسون: حماية النفس من الإنهاك والاحتراق',
+    desc: 'إرشادات نفسية وعملية للأبناء والأزواج لمواجهة الضغوط اليومية وتنظيم فترات الراحة دون الشعور بالذنب.',
+    readTime: '10 دقائق'
+  },
+  {
+    slug: 'parkinson-faq-arabic-families',
+    badge: 'أسئلة شائعة',
+    title: '25 سؤالاً تطرحها الأسر العربية حول مرض باركنسون',
+    desc: 'إجابات علمية صريحة حول الوراثة، متوسط العمر، إمكانية الشفاء، والتعايش المستقر لسنوات طويلة.',
+    readTime: '14 دقيقة'
+  }
+];
+
+const printableTools = [
+  {
+    slug: 'medication-schedule',
+    icon: '💊',
+    title: 'جدول مواعيد وجرعات أدوية باركنسون (On/Off)',
+    desc: 'ورقة منظمة لتدوين أوقات تناول الحبوب بالساعة وحالة نشاط المريض.'
+  },
+  {
+    slug: 'fall-prevention-checklist',
+    icon: '🛡️',
+    title: 'قائمة فحص أمان المنزل والوقاية من السقوط',
+    desc: 'قائمة لمراجعة الحمام والسلالم والإضاءة لتفادي حوادث الانزلاق.'
+  },
+  {
+    slug: 'daily-mobility-exercises',
+    icon: '🏃‍♂️',
+    title: 'جدول تمارين التوازن والحركة اليومية',
+    desc: 'تمارين الإطالة والخطوات الكبيرة لمقاومة انكماش وتيبس العضلات.'
+  },
+  {
+    slug: 'speech-swallowing-exercises',
+    icon: '🗣️',
+    title: 'دليل تمارين الصوت وعضلات البلع الآمن',
+    desc: 'تمارين صوتية جهورية وتمارين لحماية مجرى التنفس من الشرقة.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <span class="badge badge--accent">المرجع الطبي العربي الأول</span>
+        <h1 class="hero-title">
+          سَنَدك العلمي في رحلة التعايش مع <span>مرض باركنسون</span>
+        </h1>
+        <p class="hero-lead">
+          منصة متخصصة وموثوقة تقدم للأسر العربية والمرافقين كل ما يحتاجونه لرعاية أحبابهم المصابين بالشلل الرعاش: من خطط العلاج الطبيعي وأدوات الأمان المنزلي إلى أدلة الأدوية المعتمدة طبياً.
+        </p>
+        <div class="hero-actions">
+          <a href="/articles/" class="btn btn--primary">
+            تصفح المكتبة الطبية 📚
+          </a>
+          <a href="/tools/" class="btn btn--accent">
+            تحميل الجداول والمطبوعات 🖨️
+          </a>
+          <a href="/tests/" class="btn btn--outline">
+            الفحص الحركي الذاتي ⏱️
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STATS -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">16+</div>
+          <div class="stat-label">دليل علمي مفصل وشامل</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">5</div>
+          <div class="stat-label">جداول PDF مجانية قابلة للطباعة</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">مستند لأحدث إرشادات طب الأعصاب (MDS)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">مجاني</div>
+          <div class="stat-label">وقف توعوي لخدمة أسر كبار السن</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Slot 1 -->
+  <div class="container">
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="3000000001"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+  </div>
+
+  <!-- FEATURED ARTICLES -->
+  <section class="section-articles">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">المكتبة الطبية الموجهة</span>
+        <h2>أحدث الأدلة الطبية والإرشادية</h2>
+        <p>مقالات معمقة كتبها وراجعها متخصصون لتوضيح كل جانب من جوانب التعايش مع باركنسون.</p>
+      </div>
+
+      <div class="articles-grid">
+        {featuredArticles.map((art) => (
+          <article class="article-card">
+            <div class="article-card__header">
+              <span class="badge">{art.badge}</span>
+              <span class="read-time">⏱️ {art.readTime}</span>
+            </div>
+            <h3>
+              <a href={`/articles/${art.slug}/`}>{art.title}</a>
+            </h3>
+            <p>{art.desc}</p>
+            <div class="article-card__footer">
+              <a href={`/articles/${art.slug}/`} class="card-link">
+                اقرأ الدليل كاملاً ←
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="section-cta">
+        <a href="/articles/" class="btn btn--outline">
+          استكشف كافة المقالات الـ 16 في المكتبة ←
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINTABLE TOOLS SPOTLIGHT -->
+  <section class="section-tools">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge--accent">جاهزة للطباعة والتنزيل</span>
+        <h2>أدوات وجداول الاستخدام اليومي</h2>
+        <p>اطبع هذه الجداول والصقها على الثلاجة أو خذها معك في موعد زيارة طبيب الأعصاب.</p>
+      </div>
+
+      <div class="tools-grid">
+        {printableTools.map((tool) => (
+          <div class="tool-spotlight-card">
+            <span class="tool-spotlight-icon">{tool.icon}</span>
+            <h3>{tool.title}</h3>
+            <p>{tool.desc}</p>
+            <a href={`/tools/${tool.slug}/`} class="btn btn--primary btn--sm">
+              معاينة وطباعة PDF 🖨️
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="section-cta">
+        <a href="/tools/" class="btn btn--accent">
+          عرض جميع الجداول المطبوعة الخمسة 📋
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TEST TEASER -->
+  <section class="section-interactive">
+    <div class="container--narrow">
+      <div class="interactive-box">
+        <div class="interactive-badge">أداة حصرية للموقع</div>
+        <h2>هل تلاحظ تغيرات في التناسق الحركي؟</h2>
+        <p>
+          جرب الآن فحص سرعة النقر بالأصابع (Finger Tapping Test) التفاعلي لمدة 15 ثانية، وأجب على استبيان العلامات العشر لملاحظة التناسق العصبي الأولي وتدوين نتائجه.
+        </p>
+        <a href="/tests/" class="btn btn--primary">
+          ابدأ الفحص الحركي الذاتي الآن ⏱️
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 80%);
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .hero-title {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    color: var(--color-primary);
+    margin: var(--space-sm) 0;
+    line-height: 1.3;
+    font-weight: 900;
+  }
+  .hero-title span {
+    color: var(--color-accent);
+  }
+  .hero-lead {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    line-height: 1.85;
+    max-width: 780px;
+    margin: 0 auto var(--space-lg);
+  }
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+  .stats-section {
+    padding: var(--space-lg) 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    text-align: center;
+  }
+  .stat-card {
+    padding: var(--space-sm);
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    line-height: 1.2;
+  }
+  .stat-label {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-top: 0.25rem;
+  }
+  .section-articles, .section-tools {
+    padding: var(--space-2xl) 0;
+  }
+  .section-tools {
+    background: #ffffff;
+  }
+  .section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto var(--space-xl);
+  }
+  .section-header h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 0.5rem;
+  }
+  .section-header p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+  .article-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+  }
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .article-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+  }
+  .read-time {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+  .article-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+    line-height: 1.45;
+  }
+  .article-card h3 a {
+    color: var(--color-text);
+  }
+  .article-card h3 a:hover {
+    color: var(--color-primary);
+  }
+  .article-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    flex: 1;
+    margin-bottom: var(--space-md);
+  }
+  .card-link {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+  }
+  .section-cta {
+    text-align: center;
+    margin-top: var(--space-xl);
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+  }
+  .tool-spotlight-card {
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .tool-spotlight-card:hover {
+    transform: translateY(-4px);
+  }
+  .tool-spotlight-icon {
+    font-size: 3rem;
+    display: inline-block;
+    margin-bottom: var(--space-xs);
+  }
+  .tool-spotlight-card h3 {
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  .tool-spotlight-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+  .btn--sm {
+    padding: 0.45rem 1rem;
+    font-size: 0.88rem;
+  }
+  .section-interactive {
+    padding: var(--space-2xl) 0;
+  }
+  .interactive-box {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+  .interactive-badge {
+    display: inline-block;
+    background: #f59e0b;
+    color: #0f172a;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: var(--space-sm);
+  }
+  .interactive-box h2 {
+    color: #ffffff;
+    font-size: 1.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .interactive-box p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 620px;
+    margin: 0 auto var(--space-lg);
+  }
+  @media (max-width: 820px) {
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 480px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

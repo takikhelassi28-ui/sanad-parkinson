@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'من نحن | فريق سَنَد لدعم ورعاية مرضى باركنسون';
+const description = 'تعرف على رسالة منصة سَنَد، وفريقنا الاستشاري المتخصص في طب الأعصاب والعلاج الطبيعي لدعم الأسر العربية المتعايشة مع مرض باركنسون.';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="container--narrow">
+      <span class="badge badge--accent">رسالتنا وهدفنا</span>
+      <h1 class="about-hero__title">منصة سَنَد: الرفيق الموثوق لمرضى باركنسون وأسرهم</h1>
+      <p class="about-hero__lead">
+        انطلقت منصة "سَنَد" بدافع إنساني عميق لسد الفراغ المعرفي الحاد في المحتوى العربي المتخصص حول مرض باركنسون (الشلل الرعاش). نحن نؤمن بأن التشخيص بباركنسون ليس نهاية الطريق، بل بداية لرحلة تعايش واعية تحتاج إلى العلم، الأمل، والدعم العملي اليومي.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card__icon">🎯</div>
+          <h3>رؤيتنا</h3>
+          <p>أن نكون المرجع الرقمي العربي الأول والمجاني الأكثر موثوقية لكل أسرة ومرافق لمريض باركنسون، لتمكينهم من تقديم أفضل رعاية منزلية تحافظ على كرامة واستقلالية كبار السن.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card__icon">🔬</div>
+          <h3>التزامنا العلمي الصارم</h3>
+          <p>نستند في كافة مقالاتنا وأدواتنا إلى أحدث الأدلة الطبية الصادرة عن الجمعية الدولية للحركات اللاإرادية (MDS) والأكاديمية الأمريكية لطب الأعصاب (AAN).</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card__icon">🤝</div>
+          <h3>دعم المرافق أولاً</h3>
+          <p>المرافقون وأبناء المريض هم الأبطال المجهولون؛ نوفر لهم خططاً عملية للتعامل مع نوبات التجمد، تنظيم مواعيد الدواء المعقدة، والوقاية من الاحتراق النفسي.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial & Medical Advisory -->
+  <section class="team-section">
+    <div class="container--narrow">
+      <div class="section-header">
+        <span class="badge">الإشراف الطبي والتحريري</span>
+        <h2>من يكتب ويراجع محتوى سَنَد؟</h2>
+      </div>
+
+      <div class="expert-card">
+        <div class="expert-avatar">👨‍⚕️</div>
+        <div class="expert-info">
+          <h3>د. طارق المنصوري</h3>
+          <p class="expert-role">استشاري أمراض المخ والأعصاب واضطرابات الحركة</p>
+          <p class="expert-bio">
+            خبرة أكثر من 18 عاماً في المستشفيات الجامعية والمراكز التخصصية. متخصص في برامج العلاج الدوائي المتقدم لباركنسون، التحفيز العميق للدماغ (DBS)، وتأهيل كبار السن. يشرف د. طارق على المراجعة العلمية الدقيقة لكل دليل ومقال ينشر في المنصة.
+          </p>
+        </div>
+      </div>
+
+      <div class="expert-card">
+        <div class="expert-avatar">👩‍⚕️</div>
+        <div class="expert-info">
+          <h3>أ. مريم السعيد</h3>
+          <p class="expert-role">أخصائية أولى في العلاج الطبيعي والتأهيل الحركي لكبار السن</p>
+          <p class="expert-bio">
+            متخصصة في برامج التوازن والوقاية من السقوط المعتمدة دولياً لمرضى الاضطرابات العصبية الحركية، ومبتكرة جداول التمارين المنزلية والأدوات الإرشادية المتاحة عبر المنصة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .about-hero {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .about-hero__title {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .about-hero__lead {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.85;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .about-section {
+    padding: var(--space-xl) 0;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+  .about-card {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: right;
+  }
+  .about-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+  }
+  .about-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+  .about-card p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+  .team-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    background: #ffffff;
+    border-top: 1px solid var(--color-border);
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+  }
+  .section-header h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-top: var(--space-xs);
+  }
+  .expert-card {
+    display: flex;
+    gap: var(--space-md);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+  }
+  .expert-avatar {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+  .expert-info h3 {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.2rem;
+  }
+  .expert-role {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-bottom: 0.5rem;
+  }
+  .expert-bio {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+  @media (max-width: 820px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    .expert-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'سياسة الخصوصية';
+const description = 'سياسة الخصوصية لمنصة سَنَد — كيف نجمع ونحمي بياناتك وفق معايير اللائحة العامة لحماية البيانات (GDPR) وسياسات Google AdSense.';
+const lastUpdated = 'سبتمبر 2026';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container--narrow">
+      <span class="badge">قانوني</span>
+      <h1 class="page-hero__title">سياسة الخصوصية (Privacy Policy)</h1>
+      <p class="page-hero__lead">
+        نلتزم في منصة "سَنَد" بحماية خصوصية زوارنا والشفافية التامة بشأن كيفية جمع واستخدام البيانات وفق أعلى المعايير القانونية الدولية المعمول بها.
+      </p>
+      <p class="last-updated">آخر تحديث: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="policy-section">
+    <div class="container--narrow content-block">
+
+      <div class="section-block">
+        <h2>1. مقدمة</h2>
+        <p>
+          توضح سياسة الخصوصية هذه الممارسات المتبعة في منصة <strong>سَنَد</strong> فيما يتعلق بجمع المعلومات، وحمايتها، واستخدامها عند تصفحك للموقع أو استخدام الأدوات والجداول التفاعلية.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>2. البيانات التي نجمعها</h2>
+        <p>نحرص على الحد الأدنى من جمع البيانات الشخصية:</p>
+        <ul>
+          <li><strong>البيانات المقدمة طوعاً:</strong> كالاسم والبريد الإلكتروني عند استخدام نموذج "تواصل معنا". لا نشارك هذه البيانات مع أي جهة تجارية أبداً.</li>
+          <li><strong>بيانات الاستخدام غير المحددة للهوية (Log Data):</strong> نوع المتصفح، الصفحات التي زرتها، والوقت المستغرق على الموقع لتحسين تجربة التصفح وسرعة الاستجابة.</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h2>3. ملفات تعريف الارتباط (Cookies) وإعلانات Google AdSense</h2>
+        <p>
+          يستخدم الموقع ملفات تعريف الارتباط لتحسين أداء الصفحات ولعرض إعلانات ملائمة عبر شبكة <strong>Google AdSense</strong>:
+        </p>
+        <ul>
+          <li>تستخدم شركة Google بصفتها مورداً لطرف ثالث ملفات تعريف الارتباط (مثل ملف DoubleClick cookie) لعرض الإعلانات على موقعنا بناءً على زيارات المستخدم السابقة لموقعنا أو لمواقع أخرى على الإنترنت.</li>
+          <li>يمكن للمستخدمين إلغاء الاشتراك في استخدام ملف تعريف الارتباط المخصص للإعلانات المستهدفة بزيارة <a href="https://adssettings.google.com" target="_blank" rel="noopener">إعدادات إعلانات Google</a>.</li>
+        </ul>
+      </div>
+
+      <div class="section-block">
+        <h2>4. أمان البيانات</h2>
+        <p>
+          نطبق أحدث تقنيات التشفير الرقمي وبروتوكول الاتصال الآمن (HTTPS / SSL) لضمان حماية جميع البيانات المتبادلة بين جهازك وخوادمنا من أي وصول غير مصرح به.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>5. حقوق المستخدم</h2>
+        <p>
+          وفقاً للائحة العامة لحماية البيانات (GDPR) وقوانين الخصوصية، يحق لك طلب الوصول إلى أي بيانات قدمتها، أو تصحيحها، أو طلب حذفها نهائياً بالتواصل المباشر معنا.
+        </p>
+      </div>
+
+      <div class="section-block">
+        <h2>6. التواصل معنا بخصوص الخصوصية</h2>
+        <p>لأي استفسار يتعلق بسياسة الخصوصية، يرجى مراسلتنا على: <a href="mailto:privacy@sanadparkinson.com" dir="ltr">privacy@sanadparkinson.com</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .page-hero__title {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .page-hero__lead {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto var(--space-sm);
+  }
+  .last-updated {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  .policy-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+  .content-block {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+  }
+  .section-block {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-primary-xlight);
+  }
+  .section-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .section-block h2 {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+  .section-block p {
+    line-height: 1.9;
+    color: #334155;
+    margin-bottom: var(--space-sm);
+  }
+  .section-block ul {
+    padding-right: 1.5rem;
+    color: #334155;
+    line-height: 1.8;
+  }
+  .section-block li {
+    margin-bottom: 0.4rem;
+  }
+</style>

@@ -1,0 +1,444 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'فحص DaTscan وتشخيص مرض باركنسون: كل ما تحتاج معرفته عن التصوير والتحاليل';
+const description = 'دليل تفصيلي حول تصوير DaTscan النووي وناقلات الدوبامين، التصوير بالرنين المغناطيسي، واختبارات السائل الدماغي للكشف المبكر عن مرض باركنسون بدقة.';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <section class="article-hero">
+    <div class="container--narrow">
+      <span class="badge">تشخيص متقدم وفحوصات</span>
+      <h1 class="article-hero__title">فحص DaTscan وتشخيص مرض باركنسون: الدليل الطبي الكامل</h1>
+      <p class="article-hero__lead">
+        كيف يتأكد استشاري الأعصاب من إصابة الشخص بباركنسون وليس بحالة أخرى مشابهة؟ ما هو تصوير DaTscan النووي؟ وهل يوجد تحليل دم أو رنين مغناطيسي يثبت المرض بنسبة 100%؟ في هذا المقال نجيب عن أدق الأسئلة التشخيصية.
+      </p>
+      <div class="article-meta">
+        <span>✍️ بقلم: د. طارق المنصوري | استشاري المخ والأعصاب</span>
+        <span>🗓️ آخر تحديث: سبتمبر 2026</span>
+        <span>✅ مراجع سريرياً</span>
+        <span>⏱️ وقت القراءة: 11 دقيقة</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="container--narrow article-body">
+
+    <nav class="toc">
+      <h2 class="toc__title">📋 محتويات هذا الدليل</h2>
+      <ol class="toc__list">
+        <li><a href="#clinical-diagnosis">الأساس الأول: التشخيص السريري وفق معايير MDS</a></li>
+        <li><a href="#what-is-datscan">ما هو فحص DaTscan وكيف يعمل؟</a></li>
+        <li><a href="#when-datscan-used">متى يطلب الطبيب إجراء فحص DaTscan؟</a></li>
+        <li><a href="#mri-ct-role">دور الرنين المغناطيسي (MRI) والأشعة المقطعية</a></li>
+        <li><a href="#alpha-synuclein-biomarkers">ثورة المؤشرات الحيوية: فحص ألفا-سينوكلين الجديد</a></li>
+        <li><a href="#prep-steps">كيف تستعد لفحص DaTscan خطوة بخطوة؟</a></li>
+        <li><a href="#faq">الأسئلة الشائعة حول فحوصات باركنسون</a></li>
+      </ol>
+    </nav>
+
+    <div class="ad-slot" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX">
+      <span class="ad-slot__label">إعلان مدعوم</span>
+      <div class="ad-slot__placeholder">مساحة إعلانية متوافقة مع تجربة القارئ</div>
+    </div>
+
+    <section id="clinical-diagnosis">
+      <h2>الأساس الأول: التشخيص السريري وفق معايير جمعية اضطرابات الحركة (MDS)</h2>
+      <p>
+        حتى اليوم، لا يزال <strong>الفحص السريري الدقيق داخل عيادة طبيب الأعصاب</strong> هو الركيزة الأساسية لتشخيص مرض باركنسون. لا يمكن لأي جهاز تصوير متطور أن يحل محل فحص الطبيب المتمرس للمنعكسات العصبية ونمط الحركة.
+      </p>
+      <p>
+        وفقاً للمعايير العالمية لجمعية اضطرابات الحركة الدولية (Movement Disorder Society)، يجب إثبات وجود المتلازمة الحركية (Parkinsonism) أولاً، وتتطلب وجود:
+      </p>
+      <div class="info-card">
+        <h3>المعيار الإلزامي: بطء الحركة (Bradykinesia)</h3>
+        <p>تناقص سرعة وسعة الحركة مع التكرار (مثل اختبار النقر بالأصابع أو فتح وإغلاق الكف باستمرار)، مقترناً بواحد على الأقل من العرضين التاليين:</p>
+        <ul>
+          <li><strong>رعاش الراحة (Rest Tremor):</strong> رجفة غير إرادية ترددها 4 إلى 6 هرتز تظهر أثناء استرخاء الطرف المصاب.</li>
+          <li><strong>تيبس العضلات (Rigidity):</strong> مقاومة مستمرة عند ثني وبسط المفصل (علامة العجلة المسننة - Cogwheel rigidity).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="what-is-datscan">
+      <h2>ما هو فحص DaTscan وكيف يعمل؟</h2>
+      <p>
+        يعتبر <strong>DaTscan</strong> (تصوير ناقل الدوبامين) أحد أهم التطورات في الطب النووي العصبي الحاصل على اعتماد هيئة الغذاء والدواء الأمريكية (FDA) ووكالة الأدوية الأوروبية (EMA).
+      </p>
+      <p>
+        يقوم الفحص على حقن مادة مشعة متخصصة تُدعى <em>Ioflupane I-123</em> في مجرى الدم. تنتقل هذه المادة وترتبط بشكل نوعي ببروتينات تُسمى "ناقلات الدوبامين" (Dopamine Transporters) الموجودة على أطراف الخلايا العصبية الدوبامينية في منطقة "الجسم المخطط" (Striatum) في الدماغ.
+      </p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>المؤشر الفحصي</th>
+              <th>الشخص السليم / الرعاش مجهول السبب</th>
+              <th>مريض باركنسون (Parkinson's)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>شكل الإشارة المضيئة</strong></td>
+              <td>شكل يشبه الفاصلة المتناظرة الكثيفة (Comma-shaped) في جانبي الدماغ</td>
+              <td>تآكل ذيل الفاصلة وتحولها إلى نقطة دائرية باهتة (Period-shaped) غير متناظرة</td>
+            </tr>
+            <tr>
+              <td><strong>كثافة ناقلات الدوبامين</strong></td>
+              <td>طبيعية 100% ولا يوجد فقدان عصبي</td>
+              <td>انخفاض حاد في كثافة النواقل بأكثر من 50% إلى 70%</td>
+            </tr>
+            <tr>
+              <td><strong>الهدف التشخيصي</strong></td>
+              <td>يستبعد التلف الدوباميني الحقيقي</td>
+              <td>يؤكد متلازمة تلف الدوبامين قبل المشبكي</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="ad-slot" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX">
+      <span class="ad-slot__label">إعلان مدعوم</span>
+      <div class="ad-slot__placeholder">مساحة إعلانية متوافقة مع تجربة القارئ</div>
+    </div>
+
+    <section id="when-datscan-used">
+      <h2>متى يطلب الطبيب إجراء فحص DaTscan؟</h2>
+      <p>
+        لا يحتاج كل مريض يشتبه بإصابته بباركنسون إلى DaTscan. يتم اللجوء إليه في حالات الشك السريري، وأبرزها:
+      </p>
+      <ol>
+        <li><strong>التفريق بين باركنسون والرعاش الأساسي:</strong> عندما تظهر على المريض رجفة مختلطة تجعل التمييز بين الحالتين صعباً. في الرعاش الأساسي، تكون نتيجة DaTscan طبيعية تماماً.</li>
+        <li><strong>الأعراض المبكرة جداً أو غير النمطية:</strong> عندما يعاني المريض من بطء وتيبس خفيف في جانب واحد دون وجود رعاش واضح.</li>
+        <li><strong>التفريق عن الرعاش المحفز بالأدوية:</strong> بعض الأدوية النفسية تسبب أعراض تشبه باركنسون مع بقاء ناقلات الدوبامين سليمة في فحص DaTscan.</li>
+      </ol>
+      <div class="warning-card">
+        <strong>تنبيه طبي دقيق:</strong> فحص DaTscan يميز بين باركنسون والرعاش الأساسي، لكنه <em>لا يستطيع</em> التفريق بدقة بين مرض باركنسون الشائع والاعتلالات الحركية غير النمطية (مثل الضمور الجهازي المتعدد MSA أو الشلل فوق النووي التقدمي PSP)، لأن كلاهما يرافقه نقص في ناقلات الدوبامين.
+      </div>
+    </section>
+
+    <section id="mri-ct-role">
+      <h2>دور الرنين المغناطيسي (MRI) والأشعة المقطعية (CT)</h2>
+      <p>
+        كثيراً ما يتفاجأ المريض وأسرته عندما تظهر نتيجة أشعة الرنين المغناطيسي للدماغ "طبيعية تماماً ولا توجد جلطات أو أورام". يعتقد البعض أن هذا ينفي المرض، ولكن الحقيقة هي العكس:
+      </p>
+      <ul>
+        <li><strong>الرنين المغناطيسي التقليدي لمرضى باركنسون سليم:</strong> لأن التلف يحدث على مستوى ميكروسكوبي كيميائي (خلايا المادة السوداء) لا يظهر في الرنين العادي.</li>
+        <li><strong>الهدف الرئيسي من الرنين هو "الاستبعاد":</strong> يطلبه الطبيب لنفي أسباب أخرى تسبب بطء الحركة والرعاش؛ مثل استسقاء الرأس سوي الضغط (NPH)، الأورام السحائية، الجلطات الدماغية المتعددة في الأوعية الدموية الصغيرة، أو ترسبات النحاس في مرض ويلسون.</li>
+        <li><strong>تقنية 7-Tesla الحديثة (علامة ذيل السنونو - Swallow Tail):</strong> في مراكز الأبحاث المتقدمة، يستطيع الرنين عالي الدقة رصد غياب بقعة Nigrosome-1 في المادة السوداء والتي تفقد مظهرها الطبيعي في بداية المرض.</li>
+      </ul>
+    </section>
+
+    <section id="alpha-synuclein-biomarkers">
+      <h2>ثورة المؤشرات الحيوية: فحص بروتين ألفا-سينوكلين الجديد</h2>
+      <p>
+        شهد عام 2023 و2024 ثورة علمية غير مسبوقة بقيادة مؤسسة مايكل جي فوكس لأبحاث باركنسون من خلال تقنية تُعرف باسم:
+        <strong>Seed Amplification Assay (SAA)</strong>.
+      </p>
+      <p>
+        تقوم هذه التقنية على كشف التجمعات المجهرية المشوهة لبروتين <em>Alpha-Synuclein</em> في السائل الدماغي الشوكي (CSF) أو من خلال خزعة جلدية سطحية صغيرة جداً. هذا الاختبار قادر على تأكيد وجود باركنسون بدقة تتجاوز 90%، وحتى قبل ظهور أي رجفة أو مشية متصلبة بسنوات طويلة!
+      </p>
+    </section>
+
+    <section id="prep-steps">
+      <h2>كيف تستعد لفحص DaTscan خطوة بخطوة؟</h2>
+      <p>
+        إذا قرر طبيبك إجراء تصوير DaTscan، فإليك الخطوات العملية التي ستمر بها:
+      </p>
+      <div class="steps-box">
+        <div class="step-item">
+          <span class="step-num">1</span>
+          <div>
+            <strong>حماية الغدة الدرقية:</strong> قبل ساعة من الفحص، سيعطيك الطبيب دواءً (مثل قطرات لوغول أو بيركلورات البوتاسيوم) لإشباع الغدة الدرقية ومنعها من امتصاص اليود المشع.
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">2</span>
+          <div>
+            <strong>حقن المادة المشعة:</strong> يتم حقن كمية ضئيلة جداً من نظير Ioflupane في وريد الذراع عبر كانيولا صغيرة، دون أن تسبب أي شعور بالحرارة أو التعب.
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">3</span>
+          <div>
+            <strong>فترة الانتظار (3 إلى 4 ساعات):</strong> يحتاج الجسم بضع ساعات حتى تصل المادة المشعة إلى مستقبلات الدماغ وترتبط بها جيداً. يمكنك خلالها شرب الماء والتحرك بصورة عادية.
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">4</span>
+          <div>
+            <strong>جلسة التصوير بجهاز SPECT:</strong> تستلقي على ظهرك داخل كاميرا غاما النووية لمدة 30-40 دقيقة مع تثبيت الرأس بلطف لالتقاط صور مقطعية ثلاثية الأبعاد واضحة للدماغ.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ad-slot" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX">
+      <span class="ad-slot__label">إعلان مدعوم</span>
+      <div class="ad-slot__placeholder">مساحة إعلانية متوافقة مع تجربة القارئ</div>
+    </div>
+
+    <section id="faq">
+      <h2>الأسئلة الأكثر شيوعاً حول تشخيص باركنسون</h2>
+      <div class="faq-group">
+        <details class="faq-item">
+          <summary>هل الأشعة النووية DaTscan خطيرة أو تسبب إشعاعاً مضراً؟</summary>
+          <p>
+            كمية الإشعاع في فحص DaTscan ضئيلة للغاية وتعادل تقريباً نفس كمية الإشعاع الناتجة عن فحص الأشعة المقطعية العادي لمنطقة البطن. وتتخلص الكلى من المادة المشعة سريعاً عبر شرب كميات كافية من السوائل خلال 48 ساعة بعد الفحص.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>هل يجب التوقف عن تناول أدوية باركنسون قبل فحص DaTscan؟</summary>
+          <p>
+            أدوية ليفودوبا الشائعة لا تؤثر عادة على نتيجة DaTscan. ولكن هناك أدوية محددة يجب إيقافها مؤقتاً بتعليمات الطبيب (مثل مضادات الاكتئاب المنبهة، بعض أدوية الاحتقان، والمنشطات) لأنها قد ترتبط بناقلات الدوبامين وتشوش الصورة.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>ماذا تعني نتيجة "استجابة إيجابية لاختبار ليفودوبا"؟</summary>
+          <p>
+            في العيادة، يعطي الطبيب أحياناً جرعة اختبارية من دواء ليفودوبا سريع الامتصاص للمريض. إذا تحسن بطء الحركة والتيبس بشكل ملحوظ خلال 30 إلى 60 دقيقة، فإن ذلك يدعم بقوة تشخيص مرض باركنسون التقليدي مقارنة بالأمراض العصبية الأخرى.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <div class="cta-box">
+      <h3>هل ترغب في فحص سرعة حركتك الآن؟</h3>
+      <p>جرب اختبار النقر السريع بالأصابع (Finger Tapping Test) السريري التفاعلي مجاناً عبر منصة سند.</p>
+      <a href="/tests/" class="btn btn--primary">بدء الاختبار العصبي التفاعلي ←</a>
+    </div>
+
+    <div class="author-box">
+      <div class="author-avatar">👨‍⚕️</div>
+      <div class="author-info">
+        <h4>د. طارق المنصوري</h4>
+        <p>استشاري طب المخ والأعصاب واضطرابات الحركة، زميل البورد الأوروبي لعلم الأعصاب. كرس أكثر من 18 عاماً في تشخيص وعلاج متلازمات باركنسون والتحفيز العميق للدماغ (DBS).</p>
+      </div>
+    </div>
+
+    <div class="references-box">
+      <h4>المراجع السريرية والدولية:</h4>
+      <ul>
+        <li>Movement Disorder Society (MDS) Clinical Diagnostic Criteria for Parkinson's Disease (Postuma et al., 2015).</li>
+        <li>European Association of Nuclear Medicine (EANM) practice guideline for dopamine transporter SPECT with [123I]FP-CIT (2020 update).</li>
+        <li>The Michael J. Fox Foundation for Parkinson's Research — Landmark Biomarker Discovery: The Parkinson's Progression Markers Initiative (PPMI, The Lancet Neurology 2023).</li>
+      </ul>
+    </div>
+
+  </article>
+
+</BaseLayout>
+
+<style>
+  .article-hero {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    color: var(--color-surface);
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    border-bottom: 4px solid var(--color-accent);
+  }
+  .article-hero__title {
+    font-size: var(--text-3xl);
+    line-height: 1.3;
+    margin: var(--space-md) 0;
+    color: var(--color-surface);
+  }
+  .article-hero__lead {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-primary-xlight);
+    margin-bottom: var(--space-lg);
+  }
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    font-size: var(--text-sm);
+    color: var(--color-primary-light);
+  }
+  .article-body {
+    padding: var(--space-2xl) 0;
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+  .article-body h2 {
+    font-size: var(--text-2xl);
+    color: var(--color-primary-dark);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+    border-bottom: 2px solid var(--color-border);
+  }
+  .article-body h3 {
+    font-size: var(--text-xl);
+    color: var(--color-primary);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+  .toc {
+    background-color: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+  .toc__title {
+    font-size: var(--text-lg);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-sm);
+  }
+  .toc__list {
+    padding-right: var(--space-lg);
+    margin: 0;
+  }
+  .toc__list li {
+    margin-bottom: var(--space-xs);
+  }
+  .toc__list a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .toc__list a:hover {
+    text-decoration: underline;
+  }
+  .info-card {
+    background-color: var(--color-primary-xlight);
+    border-right: 4px solid var(--color-primary);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    margin: var(--space-lg) 0;
+  }
+  .warning-card {
+    background-color: #fef3c7;
+    border-right: 4px solid var(--color-accent);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    margin: var(--space-lg) 0;
+    color: #92400e;
+  }
+  .table-wrapper {
+    overflow-x: auto;
+    margin: var(--space-lg) 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  th, td {
+    padding: var(--space-md);
+    text-align: right;
+    border-bottom: 1px solid var(--color-border);
+  }
+  th {
+    background: var(--color-primary);
+    color: var(--color-surface);
+    font-weight: 600;
+  }
+  tr:nth-child(even) {
+    background-color: var(--color-surface-soft);
+  }
+  .steps-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+  }
+  .step-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+  .step-num {
+    background: var(--color-primary);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .faq-group {
+    margin: var(--space-lg) 0;
+  }
+  .faq-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-sm);
+    padding: var(--space-md);
+  }
+  .faq-item summary {
+    font-weight: bold;
+    color: var(--color-primary-dark);
+    cursor: pointer;
+  }
+  .faq-item p {
+    margin-top: var(--space-sm);
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+  }
+  .cta-box {
+    background: linear-gradient(135deg, var(--color-surface-soft), var(--color-primary-xlight));
+    border: 2px dashed var(--color-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    margin: var(--space-2xl) 0;
+  }
+  .author-box {
+    display: flex;
+    gap: var(--space-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin-top: var(--space-2xl);
+    align-items: center;
+  }
+  .author-avatar {
+    font-size: 3rem;
+  }
+  .references-box {
+    margin-top: var(--space-xl);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+  }
+  .references-box ul {
+    padding-right: var(--space-md);
+  }
+  .ad-slot {
+    margin: var(--space-xl) 0;
+    padding: var(--space-md);
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: var(--radius-md);
+    text-align: center;
+  }
+  .ad-slot__label {
+    display: block;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-bottom: 0.25rem;
+  }
+  .ad-slot__placeholder {
+    color: #6b7280;
+    font-size: 0.875rem;
+    padding: var(--space-lg) 0;
+  }
+</style>

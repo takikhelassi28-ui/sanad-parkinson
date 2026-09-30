@@ -1,0 +1,545 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'اختبار الملاحظة الذاتية وفحص سرعة النقر الحركي | منصة سَنَد';
+const description = 'اختبار تفاعلي مبسط للملاحظة الذاتية لعلامات بطء الحركة (Bradykinesia) واختبار سرعة نقر الأصابع لتقييم التناسق الحركي الأولي.';
+---
+
+<BaseLayout title={title} description={description}>
+
+  <!-- Hero -->
+  <section class="tests-hero">
+    <div class="container--narrow">
+      <span class="badge badge--accent">أداة تفاعلية سريرية</span>
+      <h1 class="tests-hero__title">اختبار الملاحظة الذاتية والفحص الحركي الأولي</h1>
+      <p class="tests-hero__lead">
+        تساعدك هذه الأداة التفاعلية المزدوجة على مراجعة العلامات التحذيرية الشائعة لمرض باركنسون، وإجراء فحص سرعة النقر بالأصابع (Finger Tapping Test) المستخدم طبياً لقياس التناسق وبطء الحركة.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Test Box -->
+  <section class="test-arena-section">
+    <div class="container--narrow">
+      <div class="test-box">
+
+        <!-- Tabs -->
+        <div class="test-tabs">
+          <button class="test-tab-btn test-tab-btn--active" id="tabQuizBtn" type="button">
+            📝 استبيان الملاحظة (10 علامات)
+          </button>
+          <button class="test-tab-btn" id="tabTappingBtn" type="button">
+            ⏱️ فحص سرعة النقر الحركي (Tapping Test)
+          </button>
+        </div>
+
+        <!-- TAB 1: QUESTIONNAIRE -->
+        <div class="test-container test-container--active" id="containerQuiz">
+          <div class="quiz-header">
+            <h3>استبيان العلامات التحذيرية المبكرة</h3>
+            <p>أجب بـ "نعم" أو "لا" على الأسئلة التالية بناءً على ما تلاحظه في نفسك أو في والديك خلال الأشهر الستة الماضية:</p>
+          </div>
+
+          <div class="questions-list" id="questionsList">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="quiz-action">
+            <button type="button" class="btn btn--primary" id="calculateScoreBtn">
+              عرض النتيجة والتوصيات الطبية 📊
+            </button>
+          </div>
+
+          <div class="quiz-result-card" id="quizResultCard" style="display: none;">
+            <div class="result-badge" id="resultBadge">تحليل النتيجة</div>
+            <h4 id="resultTitle">عنوان النتيجة</h4>
+            <p id="resultDesc">شرح مفصل للنتيجة والتوصية المقترحة.</p>
+            <button type="button" class="btn btn--outline btn--sm" id="resetQuizBtn">
+              إعادة الاختبار 🔄
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 2: FINGER TAPPING MOTOR SPEED TEST -->
+        <div class="test-container" id="containerTapping">
+          <div class="tapping-header">
+            <h3>فحص سرعة وثبات النقر بالأصابع (Finger Tapping)</h3>
+            <p>يستخدم أطباء الأعصاب هذا الاختبار لملاحظة بطء الحركة وتراجع السعة الحركية. انقر على الزر الدائري بأصبع السبابة بأسرع وتيرة منتظمة ممكنة خلال 15 ثانية.</p>
+          </div>
+
+          <div class="tapping-status-bar">
+            <div>الوقت المتبقي: <strong id="timerDisplay">15</strong> ثانية</div>
+            <div>عدد النقرات: <strong id="tapsCountDisplay">0</strong></div>
+          </div>
+
+          <div class="tapping-arena">
+            <button type="button" class="tap-target-btn" id="tapTargetBtn" disabled>
+              <span>اضغط هنا لبدء الفحص</span>
+            </button>
+          </div>
+
+          <div class="tapping-controls">
+            <button type="button" class="btn btn--accent" id="startTappingBtn">
+              ابدأ الفحص (15 ثانية) ⏱️
+            </button>
+          </div>
+
+          <div class="tapping-result" id="tappingResult" style="display: none;">
+            <h4>نتيجتك في النقر الحركي:</h4>
+            <div class="score-display" id="tappingScoreText">0 نقرة في 15 ثانية</div>
+            <p id="tappingInterpretation">تفسير سرعة النقر والانتظام الحركي.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Medical Disclaimer Box -->
+      <div class="test-disclaimer">
+        <h4>⚠️ تنبيه إخلاء مسؤولية طبي هام</h4>
+        <p>هذا الفحص التفاعلي صُمم للتوعية الذاتية وقياس الأداء التقريبي فقط. لا يعتبر بأي حال من الأحوال أداة تشخيصية قاطعة، ولا يغني عن الفحص الإكلينيكي لدى استشاري المخ والأعصاب.</p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style is:global>
+  .tests-hero {
+    background: linear-gradient(135deg, var(--color-primary-xlight) 0%, #ffffff 70%);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .tests-hero__title {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    color: var(--color-primary);
+    margin: var(--space-xs) 0 var(--space-sm);
+  }
+  .tests-hero__lead {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .test-arena-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+  .test-box {
+    background: #ffffff;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+  .test-tabs {
+    display: flex;
+    background: var(--color-bg);
+    border-bottom: 2px solid var(--color-border);
+  }
+  .test-tab-btn {
+    flex: 1;
+    padding: 1.1rem 1rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+  .test-tab-btn:hover {
+    color: var(--color-primary);
+  }
+  .test-tab-btn--active {
+    background: #ffffff;
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+  }
+  .test-container {
+    display: none;
+    padding: var(--space-xl);
+  }
+  .test-container--active {
+    display: block;
+  }
+  .quiz-header h3, .tapping-header h3 {
+    font-size: 1.35rem;
+    color: var(--color-primary);
+    margin-bottom: 0.35rem;
+  }
+  .quiz-header p, .tapping-header p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-lg);
+  }
+  .questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: var(--space-xl);
+  }
+  .question-item {
+    background: #f8fafc;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .question-text {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .question-options {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .opt-btn {
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    border: 1.5px solid var(--color-border);
+    background: #fff;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.88rem;
+    transition: all 0.2s;
+  }
+  .opt-btn--selected-yes {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #b91c1c;
+  }
+  .opt-btn--selected-no {
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #15803d;
+  }
+  .quiz-action {
+    text-align: center;
+  }
+  .quiz-result-card {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    background: var(--color-primary-xlight);
+    border: 2px solid var(--color-primary);
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+  }
+  .result-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.95rem;
+    background: var(--color-primary);
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  .quiz-result-card h4 {
+    font-size: 1.3rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+  .quiz-result-card p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 1.25rem;
+  }
+
+  /* Tapping Test */
+  .tapping-status-bar {
+    display: flex;
+    justify-content: space-around;
+    background: var(--color-primary-xlight);
+    padding: 0.85rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xl);
+  }
+  .tapping-arena {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-lg) 0;
+  }
+  .tap-target-btn {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+    border: 6px solid #bfdbfe;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(30, 58, 138, 0.3);
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+  }
+  .tap-target-btn:active {
+    transform: scale(0.94);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+  }
+  .tap-target-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #94a3b8;
+    border-color: #cbd5e1;
+    box-shadow: none;
+  }
+  .tapping-controls {
+    text-align: center;
+    margin-top: var(--space-md);
+  }
+  .tapping-result {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: #f8fafc;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-align: center;
+  }
+  .score-display {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    margin: 0.5rem 0;
+  }
+  .test-disclaimer {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-top: var(--space-lg);
+    font-size: 0.88rem;
+    color: #78350f;
+    line-height: 1.7;
+  }
+  .test-disclaimer h4 {
+    color: #b45309;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+  @media (max-width: 640px) {
+    .question-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .question-options {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+</style>
+
+<script>
+  // Tab Switcher
+  const tabQuizBtn = document.getElementById('tabQuizBtn');
+  const tabTappingBtn = document.getElementById('tabTappingBtn');
+  const containerQuiz = document.getElementById('containerQuiz');
+  const containerTapping = document.getElementById('containerTapping');
+
+  tabQuizBtn?.addEventListener('click', () => {
+    tabQuizBtn.classList.add('test-tab-btn--active');
+    tabTappingBtn?.classList.remove('test-tab-btn--active');
+    containerQuiz?.classList.add('test-container--active');
+    containerTapping?.classList.remove('test-container--active');
+  });
+
+  tabTappingBtn?.addEventListener('click', () => {
+    tabTappingBtn.classList.add('test-tab-btn--active');
+    tabQuizBtn?.classList.remove('test-tab-btn--active');
+    containerTapping?.classList.add('test-container--active');
+    containerQuiz?.classList.remove('test-container--active');
+  });
+
+  // QUIZ QUESTIONS
+  const questions = [
+    'هل لاحظت اهتزازاً أو رجفاناً خفيفاً في إحدى اليدين أو الأصابع أثناء الراحة والاسترخاء؟',
+    'هل لاحظت أن خط يدك أصبح أصغر حجماً وأكثر تزاحماً وصعوبة في القراءة (Micrographia)؟',
+    'هل واجهت تراجعاً ملحوظاً في حاسة الشم للأطعمة القوية مثل الموز أو القهوة؟',
+    'هل تعاني من صعوبة أو ثقل عند النهوض من الكرسي المنخفض أو الخروج من السيارة؟',
+    'هل يخبرك أفراد الأسرة بأن تعابير وجهك أصبحت جادة أو قليلة الابتسام والرمش (Masked Face)؟',
+    'هل تشعر بتصلب أو تيبس غير معتاد في أحد الكتفين أو الورك لا يزول بمسكنات العظام؟',
+    'هل لاحظت قصر خطواتك أثناء المشي أو جر إحدى القدمين خفيفاً على الأرض؟',
+    'هل أصبح صوتك أكثر هدوءاً أو رتابة، أو يطلب منك الآخرون تكرار كلامك لأنه غير مسموع؟',
+    'هل تعاني من حركة عنيفة وركل أو تمثيل أحلام أثناء النوم العميق (اضطراب نوم REM)؟',
+    'هل تشعر أحياناً بأن قدميك ملتصقتان بالأرض كالمغناطيس ولا تستطيع التقدم لثوانٍ (تجمد المشي)؟'
+  ];
+
+  const answers: Record<number, boolean> = {};
+
+  const qList = document.getElementById('questionsList');
+  if (qList) {
+    questions.forEach((q, idx) => {
+      const item = document.createElement('div');
+      item.className = 'question-item';
+
+      const text = document.createElement('div');
+      text.className = 'question-text';
+      text.textContent = `${idx + 1}. ${q}`;
+
+      const opts = document.createElement('div');
+      opts.className = 'question-options';
+
+      const yesBtn = document.createElement('button');
+      yesBtn.type = 'button';
+      yesBtn.className = 'opt-btn';
+      yesBtn.textContent = 'نعم';
+
+      const noBtn = document.createElement('button');
+      noBtn.type = 'button';
+      noBtn.className = 'opt-btn';
+      noBtn.textContent = 'لا';
+
+      yesBtn.addEventListener('click', () => {
+        answers[idx] = true;
+        yesBtn.className = 'opt-btn opt-btn--selected-yes';
+        noBtn.className = 'opt-btn';
+      });
+
+      noBtn.addEventListener('click', () => {
+        answers[idx] = false;
+        noBtn.className = 'opt-btn opt-btn--selected-no';
+        yesBtn.className = 'opt-btn';
+      });
+
+      opts.appendChild(yesBtn);
+      opts.appendChild(noBtn);
+      item.appendChild(text);
+      item.appendChild(opts);
+      qList.appendChild(item);
+    });
+  }
+
+  // Calculate Quiz Score
+  document.getElementById('calculateScoreBtn')?.addEventListener('click', () => {
+    let yesCount = 0;
+    for (let i = 0; i < questions.length; i++) {
+      if (answers[i] === true) yesCount++;
+    }
+
+    const card = document.getElementById('quizResultCard');
+    const title = document.getElementById('resultTitle');
+    const desc = document.getElementById('resultDesc');
+    const badge = document.getElementById('resultBadge');
+
+    if (!card || !title || !desc || !badge) return;
+
+    card.style.display = 'block';
+
+    if (yesCount <= 2) {
+      badge.textContent = `النتيجة: ${yesCount} من 10 (منخفضة)`;
+      badge.style.background = '#15803d';
+      title.textContent = 'مؤشرات منخفضة ومطمئنة';
+      desc.textContent = 'العلامات المحددة لديك ضئيلة ولا تشير إلى مؤشرات واضحة لباركنسون. قد تكون بعض الأعراض ناتجة عن إجهاد طبيعي أو تقدم عادي في السن. استمر في الحفاظ على النشاط البدني الدوري.';
+    } else if (yesCount <= 5) {
+      badge.textContent = `النتيجة: ${yesCount} من 10 (متوسطة)`;
+      badge.style.background = '#b45309';
+      title.textContent = 'مؤشرات تستحق المتابعة الطبية الروتينية';
+      desc.textContent = 'تظهر إجاباتك وجود بعض المؤشرات التي تتداخل مع أعراض باركنسون المبكرة أو اضطرابات حركية أخرى. نوصي بتدوين هذه الملاحظات في مفكرة المتابعة وحجز موعد استشاري مع طبيب أعصاب للفحص السريري الدقيق.';
+    } else {
+      badge.textContent = `النتيجة: ${yesCount} من 10 (مرتفعة)`;
+      badge.style.background = '#b91c1c';
+      title.textContent = 'مؤشرات واضحة تتطلب فحص طبيب أعصاب قريباً';
+      desc.textContent = 'تشير إجاباتك إلى وجود عدة علامات مميزة ترتبط بالحركات اللاإرادية وبطء الحركة والتصلب. لا داعي للقلق؛ فالتشخيص المبكر يوفر خيارات علاجية دوائية ممتازة تعيد جودة الحياة الطبيعية للمريض. ننصح بمراجعة استشاري مخ وأعصاب متخصص.';
+    }
+
+    card.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.getElementById('resetQuizBtn')?.addEventListener('click', () => {
+    for (let i = 0; i < questions.length; i++) delete answers[i];
+    document.querySelectorAll('.opt-btn').forEach((b) => (b.className = 'opt-btn'));
+    const card = document.getElementById('quizResultCard');
+    if (card) card.style.display = 'none';
+  });
+
+  // FINGER TAPPING TEST LOGIC
+  let taps = 0;
+  let timeLeft = 15;
+  let tapTimer: any = null;
+  let isTappingActive = false;
+
+  const startBtn = document.getElementById('startTappingBtn');
+  const targetBtn = document.getElementById('tapTargetBtn') as HTMLButtonElement;
+  const timerDisplay = document.getElementById('timerDisplay');
+  const countDisplay = document.getElementById('tapsCountDisplay');
+  const tappingResult = document.getElementById('tappingResult');
+  const tappingScoreText = document.getElementById('tappingScoreText');
+  const tappingInterpretation = document.getElementById('tappingInterpretation');
+
+  startBtn?.addEventListener('click', () => {
+    taps = 0;
+    timeLeft = 15;
+    isTappingActive = true;
+
+    if (countDisplay) countDisplay.textContent = '0';
+    if (timerDisplay) timerDisplay.textContent = '15';
+    if (tappingResult) tappingResult.style.display = 'none';
+
+    if (targetBtn) {
+      targetBtn.disabled = false;
+      targetBtn.innerHTML = '<span>انقر هنا بأسرع ما يمكن! 🔥</span>';
+    }
+
+    startBtn.setAttribute('disabled', 'true');
+
+    tapTimer = setInterval(() => {
+      timeLeft--;
+      if (timerDisplay) timerDisplay.textContent = String(timeLeft);
+
+      if (timeLeft <= 0) {
+        clearInterval(tapTimer);
+        finishTappingTest();
+      }
+    }, 1000);
+  });
+
+  targetBtn?.addEventListener('click', () => {
+    if (!isTappingActive) return;
+    taps++;
+    if (countDisplay) countDisplay.textContent = String(taps);
+  });
+
+  function finishTappingTest() {
+    isTappingActive = false;
+    if (targetBtn) {
+      targetBtn.disabled = true;
+      targetBtn.innerHTML = '<span>انتهى الوقت! أحسنت 👏</span>';
+    }
+    if (startBtn) startBtn.removeAttribute('disabled');
+
+    if (tappingResult && tappingScoreText && tappingInterpretation) {
+      tappingResult.style.display = 'block';
+      tappingScoreText.textContent = `${taps} نقرة خلال 15 ثانية`;
+
+      if (taps >= 50) {
+        tappingInterpretation.textContent = 'سرعة حركية ممتازة وتناسق عصبي حركي سريع جداً (فوق 50 نقرة).';
+      } else if (taps >= 35) {
+        tappingInterpretation.textContent = 'معدل نقر طبيعي ومتوازن للأعمار المتوسطة وكبار السن (بين 35 و 50 نقرة).';
+      } else {
+        tappingInterpretation.textContent = 'سرعة نقر منخفضة (أقل من 35 نقرة)؛ قد تشير إلى بطء نسبي في التناسق العضلي الحركي (Bradykinesia) أو إرهاق عضلي. كرر الاختبار بيدك الأخرى ولاحظ هل يوجد فرق واضح بين اليدين.';
+      }
+    }
+  }
+</script>
