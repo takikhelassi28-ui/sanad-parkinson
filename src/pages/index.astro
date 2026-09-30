@@ -269,7 +269,9 @@ const printableTools = [
   }
   .hero-search-box {
     max-width: 650px;
+    width: 100%;
     margin: 0 auto var(--space-lg);
+    box-sizing: border-box;
   }
   .hero-search-box__input-wrap {
     display: flex;
@@ -280,6 +282,9 @@ const printableTools = [
     padding: 0.35rem 0.5rem 0.35rem 1rem;
     box-shadow: 0 4px 20px rgba(30, 58, 138, 0.08);
     transition: all 0.2s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   .hero-search-box__input-wrap:focus-within {
     border-color: var(--color-primary);
@@ -289,15 +294,19 @@ const printableTools = [
     font-size: 1.2rem;
     margin-left: 0.75rem;
     user-select: none;
+    flex-shrink: 0;
   }
   .hero-search-box__input {
-    flex: 1;
+    flex: 1 1 0%;
+    min-width: 0;
+    width: 0;
     border: none;
     outline: none;
     font-family: var(--font-body);
     font-size: 1rem;
     color: var(--color-text);
     background: transparent;
+    text-overflow: ellipsis;
   }
   .hero-search-box__btn {
     background: var(--color-primary);
@@ -311,6 +320,7 @@ const printableTools = [
     cursor: pointer;
     transition: background 0.2s ease;
     white-space: nowrap;
+    flex-shrink: 0;
   }
   .hero-search-box__btn:hover {
     background: var(--color-primary-dark);
@@ -499,6 +509,48 @@ const printableTools = [
   @media (max-width: 820px) {
     .stats-grid {
       grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 580px) {
+    .hero-search-box {
+      width: 100%;
+      padding: 0 0.25rem;
+    }
+    .hero-search-box__input-wrap {
+      flex-direction: column;
+      gap: 0.6rem;
+      padding: 0.65rem;
+      border-radius: var(--radius-lg);
+    }
+    .hero-search-box__icon {
+      display: none;
+    }
+    .hero-search-box__input {
+      width: 100%;
+      flex: none;
+      min-width: 0;
+      text-align: center;
+      padding: 0.65rem 0.5rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-bg);
+      box-sizing: border-box;
+    }
+    .hero-search-box__btn {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border-radius: var(--radius-md);
+      box-sizing: border-box;
+    }
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .hero-actions .btn {
+      width: 100%;
+      box-sizing: border-box;
     }
   }
   @media (max-width: 480px) {
