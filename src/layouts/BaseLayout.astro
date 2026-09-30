@@ -45,6 +45,31 @@ const fullTitle = `${title} | ${siteName}`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://ysty.online/#website",
+          "url": "https://ysty.online/",
+          "name": "سند",
+          "description": "منصة التوعية والدعم الشامل لمرضى باركنسون ورعاتهم في العالم العربي",
+          "inLanguage": "ar"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://ysty.online/#organization",
+          "name": "سند",
+          "url": "https://ysty.online/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ysty.online/favicon.svg"
+          }
+        }
+      ]
+    })} />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
