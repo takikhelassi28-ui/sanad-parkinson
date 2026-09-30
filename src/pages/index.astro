@@ -92,18 +92,20 @@ const printableTools = [
         </p>
 
         <!-- Search Bar -->
-        <form action="/articles/" method="GET" class="hero-search-box">
+        <form action="/articles/" method="GET" class="hero-search-box" role="search">
           <div class="hero-search-box__input-wrap">
-            <span class="hero-search-box__icon">🔍</span>
+            <span class="hero-search-box__icon" aria-hidden="true">🔍</span>
+            <label for="parkinsonSearchInput" class="sr-only">ابحث في الأدلة والأدوية الطبية</label>
             <input
               type="search"
+              id="parkinsonSearchInput"
               name="q"
               class="hero-search-box__input"
               placeholder="ابحث في الأدلة والأدوية (مثل: ليفودوبا، تمارين التوازن، منع السقوط، النوم...)"
-              aria-label="ابحث في المنصة"
+              aria-label="ابحث في الأدلة والأدوية الطبية"
               required
             />
-            <button type="submit" class="hero-search-box__btn">ابحث الآن</button>
+            <button type="submit" class="hero-search-box__btn" aria-label="تنفيذ البحث">ابحث الآن</button>
           </div>
         </form>
 
