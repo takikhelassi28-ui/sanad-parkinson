@@ -190,9 +190,18 @@ const categories = ['الكل', 'تشخيص', 'علاج وأدوية', 'أمان
     </div>
   </section>
 
-  <!-- Filter Bar -->
+  <!-- Filter & Search Bar -->
   <section class="filters-section">
     <div class="container">
+      <div class="search-box-wrapper">
+        <input
+          type="search"
+          id="articleSearchInput"
+          class="article-search-input"
+          placeholder="🔍 ابحث في الأدلة الطبية (مثال: ليفودوبا، تمارين، سقوط، نوم، تشخيص...)"
+          aria-label="ابحث في الأدلة الطبية"
+        />
+      </div>
       <div class="filters-bar">
         <span class="filters-label">تصفية حسب المحور:</span>
         <div class="filters-buttons">
@@ -397,6 +406,25 @@ const categories = ['الكل', 'تشخيص', 'علاج وأدوية', 'أمان
     padding-top: var(--space-xs);
     border-top: 1px solid var(--color-border);
   }
+  .search-box-wrapper {
+    margin-bottom: var(--space-md);
+  }
+  .article-search-input {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: #ffffff;
+    color: var(--color-text);
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  .article-search-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+  }
   .article-card__date {
     font-size: 0.8rem;
     color: var(--color-text-muted);
@@ -410,29 +438,49 @@ const categories = ['الكل', 'تشخيص', 'علاج وأدوية', 'أمان
 </style>
 
 <script>
+  const searchInput = document.getElementById('articleSearchInput') as HTMLInputElement | null;
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.article-card');
   const countEl = document.getElementById('articlesCount');
+
+  let currentCategory = 'الكل';
+  let currentQuery = '';
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const cardCategory = card.getAttribute('data-category') || '';
+      const cardTitle = (card.querySelector('.article-card__title')?.textContent || '').toLowerCase();
+      const cardExcerpt = (card.querySelector('.article-card__excerpt')?.textContent || '').toLowerCase();
+
+      const matchesCategory = currentCategory === 'الكل' || cardCategory === currentCategory;
+      const matchesQuery = !currentQuery || cardTitle.includes(currentQuery) || cardExcerpt.includes(currentQuery);
+
+      if (matchesCategory && matchesQuery) {
+        (card as HTMLElement).style.display = 'flex';
+        visibleCount++;
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (countEl) countEl.textContent = String(visibleCount);
+  }
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => b.classList.remove('filter-btn--active'));
       btn.classList.add('filter-btn--active');
-
-      const selectedCategory = btn.getAttribute('data-category');
-      let visibleCount = 0;
-
-      cards.forEach((card) => {
-        const cardCategory = card.getAttribute('data-category');
-        if (selectedCategory === 'الكل' || cardCategory === selectedCategory) {
-          (card as HTMLElement).style.display = 'flex';
-          visibleCount++;
-        } else {
-          (card as HTMLElement).style.display = 'none';
-        }
-      });
-
-      if (countEl) countEl.textContent = String(visibleCount);
+      currentCategory = btn.getAttribute('data-category') || 'الكل';
+      applyFilters();
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentQuery = (e.target as HTMLInputElement).value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
 </script>
