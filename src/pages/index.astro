@@ -148,11 +148,6 @@ const printableTools = [
     </div>
   </section>
 
-  <!-- Ad Slot 1 -->
-  <div class="container">
-    
-  </div>
-
   <!-- FEATURED ARTICLES -->
   <section class="section-articles">
     <div class="container">
@@ -253,7 +248,7 @@ const printableTools = [
     font-weight: 900;
   }
   .hero-title span {
-    color: var(--color-accent);
+    color: #9a3412;
   }
   .hero-lead {
     font-size: 1.2rem;
@@ -330,6 +325,8 @@ const printableTools = [
     padding: var(--space-lg) 0;
     background: #ffffff;
     border-bottom: 1px solid var(--color-border);
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 180px;
   }
   .stats-grid {
     display: grid;
@@ -355,6 +352,8 @@ const printableTools = [
   }
   .section-articles, .section-tools {
     padding: var(--space-2xl) 0;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 700px;
   }
   .section-tools {
     background: #ffffff;
@@ -469,6 +468,8 @@ const printableTools = [
   }
   .section-interactive {
     padding: var(--space-2xl) 0;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 320px;
   }
   .interactive-box {
     background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
